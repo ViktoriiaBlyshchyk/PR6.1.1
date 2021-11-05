@@ -22,7 +22,7 @@ void Print(int* a, const int n, int i)
 
 int Count(int* a, const int n, int i, int count)
 {
-	if (a[i] > 0 && abs(a[i]) % 5 != 0)
+	if ((i > 0) && !(i % 5 == 0))
 		count++;
 	if (i < n - 1)
 		return Count(a, n, i + 1, count);
@@ -32,7 +32,7 @@ int Count(int* a, const int n, int i, int count)
 
 void Zero(int* a, const int n, int i)
 {
-	if (a[i] > 0 && abs(a[i]) % 5 != 0)
+	if ((i > 0) && !(i % 5 == 0))
 	a[i] = 0;
 	if (i < n - 1)
 		return Zero(a, n, i + 1);
@@ -40,7 +40,7 @@ void Zero(int* a, const int n, int i)
 
 int Sum(int* a, const int n, int i, int S)
 {
-	if (a[i] > 0 && abs(a[i]) % 5 != 0)
+	if ((i > 0) && !(i % 5 == 0))
 		S += a[i];
 	if (i < n - 1)
 		return Sum(a, n, i + 1, S);
